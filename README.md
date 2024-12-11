@@ -1,33 +1,77 @@
-# :checkered_flag: NOME DO PROJETO
+# :checkered_flag: Biblioteca Digital
 
-Breve descrição do que o seu projeto faz.
+O projeto consiste em desenvolver uma plataforma web intuitiva e acessível para uma biblioteca digital, onde os usuários possam explorar, acessar e gerenciar livros, artigos e outros materiais digitais.
 
 ## :technologist: Membros da equipe
 
-Matrícula, nome e curso dos participantes.
+571603 - Victor Veras Martins - Engenharia de Software.
+512010 - Ryan Guilherme Morais Nascimento - Engenharia de Computação.
 
 ## :bulb: Objetivo Geral
-Descrever o objetivo de geral do projeto
+Criar uma biblioteca digital para catalogar livros e materiais de estudo acessíveis à comunidade.
 
 ## :eyes: Público-Alvo
-Público-alvo do projeto
+Comunidades locais, estudantes e professores.
 
 ## :star2: Impacto Esperado
-Descreva o impacto esperado do projeto em relação ao público alvo
+Ampliar o acesso à leitura e promover a educação na comunidade.
 
 ## :people_holding_hands: Papéis ou tipos de usuário da aplicação
 
-Informe aqui os tipos de usuário que irão interagir com a aplicação. Ex: administrador, locador, locatario, usuário não logado.
+administrador, estudante, porfessor, usuário não logado.
 
 > Tenha em mente que obrigatoriamente a aplicação deve possuir funcionalidades acessíveis a todos os tipos de usuário e outra funcionalidades restritas a certos tipos de usuários.
 
 ## :triangular_flag_on_post:	 Principais funcionalidades da aplicação
 
-Descreve ou liste brevemente as principais funcionalidades da aplicação que será desenvolvida. Destaque a funcionalidades que serão acessévies a todos os usuários e aquelas restriras a usuários logados.
+## **Principais Funcionalidades**
+
+### **Funcionalidades Acessíveis a Todos os Usuários (Usuário Não Logado - Área Pública):**
+- **Página Inicial:**  
+  Exibe informações sobre a biblioteca digital, objetivo do sistema e destaques do acervo.  
+
+- **Busca de Livros:**  
+  Permite pesquisar livros por título, autor ou gênero.  
+
+- **Cadastro de Usuário:**  
+  Formulário para registro de novos usuários com nome, e-mail e senha.  
+
+- **Login:**  
+  Autenticação por e-mail e senha, gerando um token JWT para acesso à área restrita.  
+
+
+### **Funcionalidades Restritas a Usuários Logados (Área Restrita):**
+
+#### **Funcionalidades Comuns a Todos os Usuários Logados (Estudante e Professor):**
+- **Logout:**  
+  Botão para encerrar a sessão disponível na barra de navegação.  
+
+- **Visualização de Perfil:**  
+  Exibe as informações pessoais e o histórico de atividades do usuário.  
+
+#### **Funcionalidades por Papel de Usuário:**
+
+1. **Estudante:**  
+   - Visualizar detalhes dos livros disponíveis.  
+   - Solicitar empréstimos de livros.  
+   - Acompanhar status de empréstimos ativos e histórico de devoluções.  
+
+2. **Professor:**  
+   - Visualizar detalhes dos livros disponíveis.  
+   - Solicitar empréstimos de livros.  
+   - Reservar livros para uso em atividades acadêmicas.  
+   - Acompanhar status de empréstimos e reservas.  
+
+3. **Administrador:**  
+   - Gerenciar o catálogo de livros (CRUD completo).  
+   - Gerenciar usuários do sistema (CRUD completo).  
+   - Atribuir papéis e permissões aos usuários.    
 
 ## :spiral_calendar: Entidades ou tabelas do sistema
 
-Liste as principais entidades do sistema.
+1.Usuário
+2.Livro
+3.Empréstimo
 
 
 ----
