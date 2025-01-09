@@ -18,9 +18,7 @@ Ampliar o acesso à leitura e promover a educação na comunidade.
 
 ## :people_holding_hands: Papéis ou tipos de usuário da aplicação
 
-administrador, estudante, porfessor, usuário não logado.
-
-> Tenha em mente que obrigatoriamente a aplicação deve possuir funcionalidades acessíveis a todos os tipos de usuário e outra funcionalidades restritas a certos tipos de usuários.
+administrador, estudante, professor, usuário não logado.
 
 ## :triangular_flag_on_post:	 Principais funcionalidades da aplicação
 
