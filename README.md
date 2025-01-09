@@ -4,8 +4,8 @@ O projeto consiste em desenvolver uma plataforma web intuitiva e acessível para
 
 ## :technologist: Membros da equipe
 
-571603 - Victor Veras Martins - Engenharia de Software.
-512010 - Ryan Guilherme Morais Nascimento - Engenharia de Computação.
+ - 571603 - Victor Veras Martins - Engenharia de Software.
+ - 512010 - Ryan Guilherme Morais Nascimento - Engenharia de Computação.
 
 ## :bulb: Objetivo Geral
 Criar uma biblioteca digital para catalogar livros e materiais de estudo acessíveis à comunidade.
@@ -69,9 +69,9 @@ administrador, estudante, porfessor, usuário não logado.
 
 ## :spiral_calendar: Entidades ou tabelas do sistema
 
-1.Usuário
-2.Livro
-3.Empréstimo
+   - Usuário.  
+   - Livro.  
+   - Empréstimo.  
 
 
 ----
