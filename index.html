@@ -4,33 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca Digital</title>
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/main.css">
     <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'> 
 </head>
 <body>
+    <header>
+        <div><strong>BIBLIOTECA</strong></div>
+        <nav>
+            <a href="#">Início</a>
+            <a href="login.html">Identificar-se</a>
+            <a href="#">Cadastrar-se</a>
+            <div class="search-box">
+                <input type="text" class="search-text" placeholder="Pesquise">
+                <i class="bx bx-search"></i>
+                <i class="bx bx-search-alt"></i>
+            </div>
+        </nav>
+    </header>
     <main>
-        <div class="container">
-            <form  class="login">
-                <h1>Biblioteca Digital</h1>
-                <div class="input-box">
-                    <input placeholder="Usuario" type="email">
-                    <i class="bx bxs-user"></i>
+        <div class="banner">
+            <h1>Clube de Leitura Infantojuvenil</h1>
+            <p><em>Peter Pan e Wendy</em>, de J.M. Barrie.<br>28 de janeiro, das 19h às 20h</p>
+            <button>Participe!</button>
+        </div>
+    
+        <div class="section">
+            <h2>A biblioteca tá online</h2>
+            <div class="book-list">
+                <div class="book">
+                    <img src="capa1.jpg" alt="Livro 1">
+                    <p>Algum lugar</p>
                 </div>
-                <div class="input-box">
-                    <input placeholder="Senha" type="password">
-                    <i class="bx bxs-lock-alt"></i>
+                <div class="book">
+                    <img src="capa2.jpg" alt="Livro 2">
+                    <p>Carmilla</p>
                 </div>
-                <div class="remember">
-                    <label for="Senha">
-                        <input type="checkbox">
-                        Lembrar minha senha
-                    </label>
-                    <a href="#password">Esqueci a senha</a>
+                <div class="book">
+                    <img src="capa3.jpg" alt="Livro 3">
+                    <p>Big Tech</p>
                 </div>
-                <button type="submit">Login</button>
-                <p>Não tem uma conta? <a href="#register">Cadastre-se</a></p>
-            </form>
+            </div>
+            <button class="button-more">Ver mais</button>
+        </div>
+    
+        <div class="section">
+            <h2>Primeiro de uma série: desafio de janeiro</h2>
+            <div class="book-list">
+                <div class="book">
+                    <img src="serie1.jpg" alt="Série 1">
+                    <p>Menino Bruxa</p>
+                </div>
+                <div class="book">
+                    <img src="serie2.jpg" alt="Série 2">
+                    <p>As Brumas de Avalon</p>
+                </div>
+                <div class="book">
+                    <img src="serie3.jpg" alt="Série 3">
+                    <p>Sombra e Ossos</p>
+                </div>
+            </div>
+            <button class="button-more">Ver mais</button>
         </div>
     </main>
 </body>
+
 </html>
