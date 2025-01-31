@@ -51,11 +51,11 @@ header a {
     cursor: pointer;
 }
 
-.section {
+.section-books {
     padding: 20px;
 }
 
-.section h2 {
+.section-books h2 {
     margin-bottom: 10px;
 }
 
@@ -76,8 +76,10 @@ header a {
     border-radius: 5px;
 }
 
-.button-more {
-    margin-top: 10px;
+.section-books .button-more {
+    width: 90px;
+    height: 30px;
+    margin-top: 150px;
     padding: 5px 10px;
     background-color: #007bff;
     color: white;

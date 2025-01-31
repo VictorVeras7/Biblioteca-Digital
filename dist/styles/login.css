@@ -29,6 +29,11 @@ body {
 
 .container h1 {
     text-align: center;
+    font-size: 25px;
+}
+
+.container h1 span {
+    color: rgb(46, 116, 182);
 }
 
 .input-box {
@@ -103,7 +108,7 @@ body {
 
 .login button a {
     text-decoration: none;
-    color: rgb(103, 108, 109);
+    color: black
 }
 
 .login p {
