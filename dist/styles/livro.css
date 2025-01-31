@@ -1,0 +1,44 @@
+.book-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.book-section h2 {
+    width: 100%;
+    padding: 2vh;
+}
+
+.book-cover {
+    width: 220px;
+    padding: 5vh;
+}
+
+.book-section .alugar-button, .previa-button {
+    height: 40px;
+    margin-left: 2vh;
+    padding-right: 30px;
+    padding-left: 30px;
+    border-radius: 5px;
+}
+
+.book-section .alugar-button {
+    color: white;
+    font-weight: bold;
+    background-color: mediumblue;
+    cursor: pointer;
+    border: 0;
+}
+
+.book-section button:hover {
+    filter: brightness(120%);
+}
+
+.book-section .previa-button {
+    color: mediumblue;
+    font-weight: bold;
+    background-color: white;
+    border: 1px solid mediumblue;
+    cursor: pointer;
+
+}
