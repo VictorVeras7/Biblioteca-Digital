@@ -1,10 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Open Sans", serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
 }
+
+header strong {
+ font-size: 25px;
+}
+
+strong span {
+    color: rgb(46, 116, 182);
+}
+
 header {
+    height: 80px;
     background-color: #ffffff;
     padding: 10px 20px;
     display: flex;
@@ -12,6 +25,7 @@ header {
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 header a {
     margin-left: 20px;
     text-decoration: none;
@@ -28,6 +42,7 @@ header a {
     padding: 40px 20px;
     text-align: center;
 }
+
 .banner button {
     padding: 10px 20px;
     background-color: #ff9800;
@@ -35,26 +50,32 @@ header a {
     color: white;
     cursor: pointer;
 }
+
 .section {
     padding: 20px;
 }
+
 .section h2 {
     margin-bottom: 10px;
 }
+
 .book-list {
     display: flex;
     overflow-x: auto;
     gap: 10px;
 }
+
 .book {
     width: 120px;
     text-align: center;
 }
+
 .book img {
     width: 100%;
     height: auto;
     border-radius: 5px;
 }
+
 .button-more {
     margin-top: 10px;
     padding: 5px 10px;
@@ -62,8 +83,4 @@ header a {
     color: white;
     border: none;
     cursor: pointer;
-}
-
-.search-box i {
-    color: gray;
 }
