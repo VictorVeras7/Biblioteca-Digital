@@ -62,27 +62,38 @@ header a {
 .book-list {
     display: flex;
     overflow-x: auto;
-    gap: 10px;
+    justify-content: start;
+    flex-direction: row;
 }
 
 .book {
-    width: 120px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    padding: 0px;
+}
+
+.book p {
+    margin-left: 40px;
 }
 
 .book img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
+    width: 200px;
+}
+
+.section-books .more {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .section-books .button-more {
     width: 90px;
     height: 30px;
-    margin-top: 150px;
     padding: 5px 10px;
     background-color: #007bff;
     color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
