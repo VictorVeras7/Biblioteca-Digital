@@ -70,7 +70,7 @@ header a {
     display: flex;
     flex-direction: column;
     width: 200px;
-    padding: 0px;
+    padding: 0;
 }
 
 .book p {
@@ -96,4 +96,70 @@ header a {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.footer {
+    margin-top: 150px;
+    width: 96.35%;
+    padding: 50px 25px;
+    background: #1e3a5f;
+    color: #efefef;
+    display: flex;
+}
+
+.footer div {
+    text-align: center;
+}
+
+.footer .col-2 {
+    flex-grow: 0.9;
+}
+
+.footer div h3 {
+    font-weight: 300;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.footer .col-1 a{
+    display: block;
+    text-decoration: none;
+    color: #efefef;
+    margin-bottom: 10px;
+}
+
+.footer form input {
+    width: 400px;
+    height: 45px;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    outline: none;
+    border: none;
+}
+
+.footer form button {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px 30px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.footer .social-icons {
+    margin-top: 30px;
+}
+
+.social-icons i {
+    font-size: 22px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: #fff;
 }
