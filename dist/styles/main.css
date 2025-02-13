@@ -112,6 +112,8 @@ header a {
     background: #1e3a5f;
     color: #efefef;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .footer div {

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="./styles/admin.css">
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+<header>
+        <div><strong>BIBLIOTECA <span>DIGITAL</span></strong></div>
+        <nav>
+            <a href="#inicio"><i class="bi bi-house-door-fill"></i></a>
+            <a href="login.html">Identificar-se</a>
+            <a href="cadastro.html">Cadastrar-se</a>
+            <a href="#pesquisar"><i class="bi bi-search"></i></a>
+        </nav>
+</header>
+
+<main>
+    <aside>
+        <h1>Painel de Administração da BIBLIOTECA DIGITAL</h1>
+    </aside>
+    <section class="admin-section">
+        <h2>Gerenciar Usuários</h2>
+        <button id="addUser">➕ Adicionar Usuário</button>
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Papel</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Usuários serão carregados aqui via JS -->
+            </tbody>
+        </table>
+    </section>
+
+    <section class="admin-section">
+        <h2>Gerenciar Livros</h2>
+        <button id="addBook">➕ Adicionar Livro</button>
+        <table id="bookTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Gênero</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Livros serão carregados aqui via JS -->
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<script src="./scripts/admin.js"></script>
+</body>
+</html>
