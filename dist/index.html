@@ -21,11 +21,41 @@
         </nav>
     </header>
     <main>
-        <div class="banner">
-            <h1>Clube de Leitura Infantojuvenil</h1>
-            <p><em>Peter Pan e Wendy</em>, de J.M. Barrie.<br>28 de janeiro, das 19h às 20h</p>
-            <button>Participe!</button>
-        </div>
+        <section class="slider">
+            <div class="slider-content">
+                <input type="radio" name="btn-radio" id="radio1">
+                <input type="radio" name="btn-radio" id="radio2">
+                <input type="radio" name="btn-radio" id="radio3">
+
+                <div class="slide-box first">
+                    <img class="img-desktop" src="assets/slider_img(1).png" alt="slider_image">
+                    <img class="img-mob" src="assets/slider_img_mob(1).png" alt="slider_image">
+                </div>
+                
+                <div class="slide-box">
+                    <img class="img-desktop" src="assets/slider_img(1).png" alt="slider_image">
+                    <img class="img-mob" src="assets/slider_img_mob(1).png" alt="slider_image">
+                </div>
+
+                <div class="slide-box">
+                    <img class="img-desktop" src="assets/slider_img(1).png" alt="slider_image">
+                    <img class="img-mob" src="assets/slider_img_mob(1).png" alt="slider_image">
+                </div>
+
+                <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                </div>
+
+                <div class="navigation-manual">
+                    <label for="radio1" class="manual-btn"></label>
+                    <label for="radio2" class="manual-btn"></label>
+                    <label for="radio3" class="manual-btn"></label>
+                </div>
+            </div>
+        </section>
+
         <section class="section-books swiper">
             <div class="more">
                 <h2>Conheça nosso acervo!</h2>
@@ -191,5 +221,6 @@
 </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="scripts/main.js"></script>
+    <script src="scripts/carrossel.js"></script>
 </body>
 </html>

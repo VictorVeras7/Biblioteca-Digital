@@ -1,54 +1,111 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+:root {
+    --primary-color: #EFF8FA;  /* Azul claríssimo */
+    --secondary-color: #8BE8FC;  /* Azul celeste */
+    --accent-color: #8BA0FC;  /* Azul arroxeado */
+    --highlight-color: #8BFCEC;  /* Verde água */
+    --warning-color: #8BFCC6;  /* Verde claro */
+    --soft-color: #8BC4FC;  /* Azul médio */
+
+    /* Cores complementares */
+    --text-dark: #1E1E1E; /* Preto suave para textos */
+    --text-light: #FFFFFF; /* Branco puro */
+    --background-light: #F0F9FF; /* Fundo claro */
+    --background-dark: #102A43; /* Azul escuro para contrastes */
+}
 
 body {
-    font-family: "Open Sans", serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: var(--background-light);
 }
 
 header strong {
- font-size: 25px;
+    font-size: 25px;
 }
-
+   
 strong span {
-    color: rgb(46, 116, 182);
+    color: var(--accent-color);
 }
-
+   
 header {
     height: 80px;
-    background-color: #ffffff;
+    background-color: var(--primary-color);
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
+   
 header a {
     margin-left: 20px;
     text-decoration: none;
     color: #333;
 }
 
+header a:hover {
+    text-decoration: dashed;
+    color: var(--soft-color);
+}
+   
 .bx {
     display: none;   
 }
 
-.banner {
-    background-color: #1e3a5f;
-    color: white;
-    padding: 40px 20px;
+section .slider {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    overflow: hidden;
+}
+
+.slider-content {
+    width: 300%;
+    height: auto;
+    display: flex;
+}
+
+.slider-content input, .img-mob {
+    display: none;
+}
+
+.slide-box {
+    width: 25%;
+    height: auto;
+    position: relative;
     text-align: center;
 }
 
-.banner button {
-    padding: 10px 20px;
-    background-color: #ff9800;
-    border: none;
-    color: white;
+.slide-box img {
+    width: 100%;
+}
+
+.navigation-manual {
+    position: absolute;
+    width: 100%;
+    margin-top: 35%;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-manual .manual-btn {
+    border: 1px solid var(--secondary-color);
+    padding: 10px;
+    border-radius: 50%;
     cursor: pointer;
+    transition: .05s;
+}
+
+.navigation-manual .manual-btn:not(:last-child) {
+    margin-right: 10px;
+}
+
+navigation-manual .manual-btn:hover {
+    background-color: var(--soft-color);
 }
 
 .section-books {
