@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+:root {
+    --primary-color: #EFF8FA;  /* Azul claríssimo */
+    --secondary-color: #8BE8FC;  /* Azul celeste */
+    --accent-color: #8BA0FC;  /* Azul arroxeado */
+    --highlight-color: #8BFCEC;  /* Verde água */
+    --warning-color: #8BFCC6;  /* Verde claro */
+    --soft-color: #8BC4FC;  /* Azul médio */
+
+    /* Cores complementares */
+    --text-dark: #1E1E1E; /* Preto suave para textos */
+    --text-light: #FFFFFF; /* Branco puro */
+    --background-light: #F0F9FF; /* Fundo claro */
+    --background-dark: #102A43; /* Azul escuro para contrastes */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -20,8 +35,8 @@ body {
 
 .container {
     width: 450px;
-    background-color: white;
-    border: 1px solid gray;
+    background-color: var(--background-light);
+    border: 1px solid var(--soft-color);
     border-radius: 15px; 
     padding: 20px 30px;
     color: black;
@@ -43,7 +58,7 @@ body {
     height: 100%;
     background-color: transparent;
     outline: none;
-    border: 0.5px solid gray;
+    border: 0.5px solid var(--background-dark);
     border-radius: 10px;
     font-size: 13.2px;
     color: black;
@@ -65,23 +80,21 @@ body {
 .register button {
     width: 100%;
     height: 50px;
-    background-color: rgb(185, 239, 243);
+    background-color: var(--background-dark);
     border: none;
     border-radius: 18px;
     cursor: pointer;
     font-size: 16px;
-    color: black;
+    color: var(--highlight-color);
     font-weight: 600;
     margin-top: 15px;
 }
 
 .register button  a {
     text-decoration: none;
-    color: black
+    color: var(--highlight-color);
 }
 
 .register button:hover {
-    background-color: gray;
-    border: 1px solid bl;
-    color: white;
+    filter: brightness(180%);
 }
