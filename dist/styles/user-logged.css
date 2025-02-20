@@ -27,9 +27,6 @@ header img {
     height: 180px;
 }
    
-strong span {
-    color: var(--accent-color);
-}
    
 header {
     height: 80px;
@@ -38,10 +35,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
    
 header a {
+    font-size: 20px;
     margin-left: 20px;
     text-decoration: none;
     color: #333;
@@ -61,7 +59,7 @@ header a:hover {
     height: 30px;
     color: var(--background-dark);
     font-size: 15px;
-    cursor: pointer;
+    cursor: pointer
 }
 
 .button-logout:hover {
