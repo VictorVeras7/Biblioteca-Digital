@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+:root {
+    --primary-color: #EFF8FA;  /* Azul claríssimo */
+    --secondary-color: #8BE8FC;  /* Azul celeste */
+    --accent-color: #8BA0FC;  /* Azul arroxeado */
+    --highlight-color: #8BFCEC;  /* Verde água */
+    --warning-color: #8BFCC6;  /* Verde claro */
+    --soft-color: #8BC4FC;  /* Azul médio */
+
+    /* Cores complementares */
+    --text-dark: #1E1E1E; /* Preto suave para textos */
+    --text-light: #FFFFFF; /* Branco puro */
+    --background-light: #F0F9FF; /* Fundo claro */
+    --background-dark: #102A43; /* Azul escuro para contrastes */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(../assets/Bookswall_generated.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    width: 350px;
+    background-color: var(--background-light);
+    border: 1px solid var(--soft-color);
+    box-shadow: var(--text-dark);
+    border-radius: 13px; 
+    padding: 5px 20px;
+    color: black;
+}
+
+img {
+    width: 180px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 45px;
+    margin: 15px 0px;   
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    outline: none;
+    border: 0.5px solid var(--background-dark);
+    border-radius: 10px;
+    font-size: 13.2px;
+    color: black;
+    padding: 15px 40px 15px 15px;
+}
+
+.input-box input::placeholder {
+    color: black;
+}
+
+.input-box i {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14;
+}
+
+.remember {
+    display: flex;
+    justify-content: space-between;
+    margin: -15px 0 15px;
+}
+
+.remember label input {
+    accent-color: black;
+    margin-right: 2px;
+    margin-top: 20px;
+}
+
+.remember a {
+    text-decoration: none;
+    color: rgb(34, 130, 240);
+}
+
+.remember a:hover {
+    text-decoration: underline;
+}
+
+.login button {
+    width: 100%;
+    height: 50px;
+    background-color: var(--background-dark);
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--highlight-color);
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.login button:hover {
+    background-color: var(--highlight-color);
+    border: 1px solid bl;
+    color: var(--background-dark);
+}
+
+.login button a {
+    text-decoration: none;
+    color: black
+}
+
+.login p {
+    font-size: 14px;
+    text-align: center;
+    margin: 15px 0 15px;
+}
+
+.login p a {
+    color: var(--background-dark);
+}

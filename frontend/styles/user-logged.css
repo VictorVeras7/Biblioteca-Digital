@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --primary-color: #EFF8FA;  /* Azul claríssimo */
+    --secondary-color: #8BE8FC;  /* Azul celeste */
+    --accent-color: #8BA0FC;  /* Azul arroxeado */
+    --highlight-color: #8BFCEC;  /* Verde água */
+    --warning-color: #8BFCC6;  /* Verde claro */
+    --soft-color: #8BC4FC;  /* Azul médio */
+
+    /* Cores complementares */
+    --text-dark: #1E1E1E; /* Preto suave para textos */
+    --text-light: #FFFFFF; /* Branco puro */
+    --background-light: #F0F9FF; /* Fundo claro */
+    --background-dark: #102A43; /* Azul escuro para contrastes */
+}
+
+body {
+    font-family: "Open Sans", serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-light);
+}
+
+header img {
+    width: 180px;
+    height: 180px;
+}
+   
+   
+header {
+    height: 80px;
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+   
+header a {
+    font-size: 20px;
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+header a:hover {
+    text-decoration: dashed;
+    color: var(--soft-color);
+}
+
+.button-logout {
+    font-family: "Open Sans", serif;
+    background-color: var(--highlight-color);
+    border: none;
+    border-radius: 10px;
+    width: 70px;
+    height: 30px;
+    color: var(--background-dark);
+    font-size: 15px;
+    cursor: pointer
+}
+
+.button-logout:hover {
+    background-color: var(--background-dark);
+    color: var(--highlight-color);
+}
+   
+.bx {
+    display: none;   
+}
+
+.slider {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    overflow: hidden;
+}
+
+.slider-content {
+    width: 300%;
+    height: auto;
+    display: flex;
+}
+
+.slider-content input {
+    display: none;
+}
+
+.slide-box {
+    width: 33.33%;
+    height: auto;
+    position: relative;
+    text-align: center;
+    transition: 1s;
+}
+
+.slide-box img {
+    width: 100%;
+}
+
+.navigation-manual {
+    position: absolute;
+    width: 100%;
+    margin-top: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-manual, .navigation-auto {
+    position: absolute;
+    width: 100%;
+    margin-top: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-manual .manual-btn, .navigation-auto div {
+    border: 0.2px solid var(--background-dark);
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.navigation-manual .manual-btn:not(:last-child), .navigation-auto div:not(:last-child) {
+    margin-right: 10px;
+}
+
+.navigation-manual .manual-btn:hover {
+    background-color: var(--background-dark);
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1 {
+    background-color: var(--background-dark);
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2 {
+    background-color: var(--background-dark);
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3 {
+    background-color: var(--background-dark);
+}
+
+#radio1:checked ~ .first {
+    margin-left: 0%;
+}
+
+#radio2:checked ~ .first {
+    margin-left: -33.33%;
+}
+
+#radio3:checked ~ .first {
+    margin-left: -66.66%;
+}
+
+main {
+    background-color: var(--background-light);
+    color: var(--text-dark);
+}
+
+.section-books {
+    padding: 20px;
+    margin-top: 60px;
+}
+
+.section-books h2 {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    font-size: 30px;
+}
+
+.book-list {
+    display: flex;
+    overflow-x: auto;
+    justify-content: start;
+    flex-direction: row;
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+    padding: 0px;
+    cursor: pointer;
+}
+
+.book:hover {
+    filter: brightness(150%);
+}
+
+.book p {
+    font-weight: 500;
+}
+
+.book img {
+    width: 200px;
+}
+
+.section-books .more {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.section-books .button-more {
+    font-family: "Open Sans", serif;
+    width: 100px;
+    height: 35px;
+    padding: 5px 10px;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.button-more:hover {
+    background-color: var(--soft-color);
+    color: var(--background-dark);
+}
+
+.search-sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background: var(--background-dark);
+    color: var(--text-light);
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    display: none; /* Escondido por padrão */
+}
+
+.search-sidebar input {
+    width: 95%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    font-family: "Open Sans", serif;
+}
+
+.search-sidebar input:focus {
+    outline: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+}
+
+.footer {
+    margin-top: 150px;
+    width: 96.35%;
+    padding: 50px 25px;
+    background: #1e3a5f;
+    color: #efefef;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer div {
+    text-align: center;
+}
+
+.footer .col-2 {
+    flex-grow: 0.9;
+}
+
+.footer div h3 {
+    font-weight: 300;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.footer .col-1 a{
+    display: block;
+    text-decoration: none;
+    color: #efefef;
+    margin-bottom: 10px;
+}
+
+.footer form input {
+    width: 400px;
+    height: 45px;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    outline: none;
+    border: none;
+}
+
+.footer form button {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px 30px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.footer .social-icons {
+    margin-top: 30px;
+}
+
+.social-icons i {
+    font-size: 22px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
