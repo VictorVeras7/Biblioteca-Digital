@@ -70,7 +70,7 @@
     <!-- Modal para adicionar livro -->
         <dialog id="bookModal">
             <div class="modal-content">
-                <h3>Adicionar Livro</h3>
+                <h3>ADICIONAR LIVRO <i class="bi bi-book"></i></h3>
                 <form id="bookForm">
                     <label for="bookTitle">Título:</label>
                     <input type="text" id="bookTitle" required>
@@ -87,11 +87,44 @@
                     <label for="bookCover">Capa do Livro:</label>
                     <input type="file" id="bookCover" accept="image/*">
         
-                    <button type="submit">Adicionar</button>
+                    <button class="add-book-modal" type="submit">Adicionar</button>
                     <button type="button" id="closeModal">Cancelar</button>
                 </form>
             </div>
         </dialog>
+
+<!-- Modal para visualizar livro -->
+<dialog id="viewBookModal" class="view-book">
+    <article class="book-section">
+        <img class="book-cover" id="modalBookCover" alt="Capa do Livro">
+        <section>
+            <div class="book-autor">
+                <h2 id="modalBookTitle">Título do Livro</h2>
+                <span class="autor"><a href="#" id="modalBookAuthor">Autor</a></span>
+            </div>
+            <div class="more">
+                <div class="star">
+                    <a>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                    </a>
+                </div>
+                <a><i class="bi bi-heart"></i></a>
+                <a><i class="bi bi-journal-text"></i></a>
+                <a><i class="bi bi-share"></i></a>
+            </div>
+            <div class="previous">
+                <button type="button" class="alugar-button">ALUGAR</button>
+                <button type="button" class="previa-button">PRÉVIA</button>
+            </div>
+            <p id="modalBookDescription">Descrição do livro será carregada aqui...</p>
+        </section>
+    </article>
+    <button id="closeBookModal">Fechar</button>
+</dialog>
 
     <section class="section-books swiper">
         <div class="more">
@@ -103,12 +136,15 @@
         </div>
         <div class="book-list swiper-wrapper">
             <div class="book-item swiper-slide">
-                <a href="livro.html">
+                <a href="#" class="openBookModal" data-title="A ciência das conexões singulares"
+                data-author="Vittorio Morfino"
+                data-description="Nesta obra, o autor propõe um encontro com Louis Althusser, do qual emerge também um encontro de Espinosa com Lucrécio e Maquiavel."
+                data-cover="https://covers.odilo.io/public/OdiloPlace_Bookwire_Brasil_BR/9786588470503_ORIGINAL.jpg">
                 <div class="book">
                     <img src="./assets/modelo-geometrico-criativo-flyer-folheto.png" alt="Livro 1">
                     <p>Algum lugar</p>
                 </div>
-                </a>
+            </a>
             </div>
             <div class="book-item swiper-slide">
                 <div class="book">
@@ -266,5 +302,6 @@
 <script src="scripts/carrossel.js"></script>
 <script src="scripts/search.js"></script>
 <script src="scripts/modal-add-livro.js"></script>
+<script src="scripts/livro.js"></script>
 </body>
 </html>
