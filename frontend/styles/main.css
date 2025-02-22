@@ -313,5 +313,38 @@ main {
     color: #fff;
 }
 
+.button-logout {
+    font-family: "Open Sans", serif;
+    background-color: var(--highlight-color);
+    border: none;
+    border-radius: 10px;
+    width: 70px;
+    height: 30px;
+    color: var(--background-dark);
+    font-size: 15px;
+    cursor: pointer
+}
 
+.button-logout:hover {
+    background-color: var(--background-dark);
+    color: var(--highlight-color);
+}
+
+.section-books .button-more {
+    font-family: "Open Sans", serif;
+    width: 100px;
+    height: 35px;
+    padding: 5px 10px;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.button-more:hover {
+    background-color: var(--soft-color);
+    color: var(--background-dark);
+}
 

@@ -369,6 +369,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+<<<<<<< HEAD
 export interface ApiLivroLivro extends Struct.CollectionTypeSchema {
   collectionName: 'livros';
   info: {
@@ -402,6 +403,8 @@ export interface ApiLivroLivro extends Struct.CollectionTypeSchema {
   };
 }
 
+=======
+>>>>>>> 814860e6fdf2cf976af82a5487f2b32ef345038c
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -911,7 +914,10 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+<<<<<<< HEAD
       'api::livro.livro': ApiLivroLivro;
+=======
+>>>>>>> 814860e6fdf2cf976af82a5487f2b32ef345038c
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
