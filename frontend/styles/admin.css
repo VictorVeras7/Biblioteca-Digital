@@ -184,9 +184,10 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 150px;
+    width: 100px;
     padding: 0px;
     cursor: pointer;
+    margin-left: 40px;
 }
 
 .book:hover {
