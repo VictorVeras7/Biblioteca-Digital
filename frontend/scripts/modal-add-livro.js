@@ -131,6 +131,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 imgPreview.style.display = "none";
             }
 
+            if(response.ok) {
+                alert("livro adicionado com sucesso");
+                location.reload();
+            }
+
             // Atualizar a lista de livros
             fetchBooks();
         } catch (error) {
@@ -154,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             books.forEach((book) => {
                 const bookItem = document.createElement("div");
-                bookItem.classList.add("book-item", "swiper-slide");
+                bookItem.classList.add("book", "swiper-slide");
                 bookItem.innerHTML = `
                     <a href="#" class="openBookModal" data-title="${book.titulo}"
                         data-author="${book.Autor}"
@@ -167,6 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </a>
                 `;
                 bookList.appendChild(bookItem);
+
             });
 
             // Reconectar eventos de clique para abrir o modal de visualização
