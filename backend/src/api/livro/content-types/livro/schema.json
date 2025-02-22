@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "livros",
+  "info": {
+    "singularName": "livro",
+    "pluralName": "livros",
+    "displayName": "Livros"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Autor": {
+      "type": "string",
+      "required": true
+    },
+    "Genero": {
+      "type": "string"
+    },
+    "Descricao": {
+      "type": "text",
+      "required": true,
+      "unique": true
+    },
+    "Capa": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
