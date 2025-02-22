@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Script carregado!");
+    console.log("Script de adicionar livro carregado!");
 
     // Referências aos elementos do modal
     const bookModal = document.getElementById("bookModal");
@@ -91,10 +91,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 body: JSON.stringify({
                     data: {
                         titulo: title,
-                        Autor: author,
+                        Autor: author, // Certifique-se de que o nome do campo está correto
                         Genero: genre,
                         Descricao: description,
-                        Capa: coverId, // Associar a capa ao livro
+                        Capa: coverId, // Certifique-se de que o nome do campo está correto
                     },
                 }),
             });
@@ -104,7 +104,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
             alert("Livro adicionado com sucesso!");
 
-            // Fechar modal após adicionar livro
+            // Preencher o modal de visualização com os dados do livro
+            const viewBookModal = document.getElementById("viewBookModal");
+            document.getElementById("modalBookTitle").textContent = title;
+            document.getElementById("modalBookAuthor").textContent = author;
+            document.getElementById("modalBookDescription").textContent = description;
+
+            // Exibir a capa do livro (se houver)
+            if (coverId) {
+                const coverUrl = `http://localhost:1337/api/upload/files/${coverId}`;
+                document.getElementById("modalBookCover").src = coverUrl;
+            } else {
+                document.getElementById("modalBookCover").src = "assets/modelo-geometrico-criativo-flyer-folheto.png"; // Imagem padrão
+            }
+
+            // Exibir o modal de visualização
+            viewBookModal.showModal();
+
+            // Fechar o modal de adição
             bookModal.close();
 
             // Limpar o formulário
@@ -114,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 imgPreview.style.display = "none";
             }
 
-            // Atualizar a lista de livros (se necessário)
+            // Atualizar a lista de livros
             fetchBooks();
         } catch (error) {
             console.error("Erro ao adicionar livro:", error);
@@ -139,17 +156,43 @@ document.addEventListener("DOMContentLoaded", () => {
                 const bookItem = document.createElement("div");
                 bookItem.classList.add("book-item", "swiper-slide");
                 bookItem.innerHTML = `
-                        <a href="#" class="openBookModal" data-title="${book.titulo}"
-                            data-author="${book.Autor}"
-                            data-description="${book.Descricao}"
-                            data-cover="https://covers.odilo.io/public/OdiloPlace_Bookwire_Brasil_BR/9786588470503_ORIGINAL.jpg">
-                    <div class="book">
-                        <img src="${book.Capa?.data?.url || 'assets/modelo-geometrico-criativo-flyer-folheto.png'}" alt="${book.titulo}">
-                        <p>${book.titulo}</p>
-                    </div>
+                    <a href="#" class="openBookModal" data-title="${book.titulo}"
+                        data-author="${book.Autor}"
+                        data-description="${book.Descricao}"
+                        data-cover="${book.Capa?.Data?.url || 'assets/modelo-geometrico-criativo-flyer-folheto.png'}">
+                        <div class="book">
+                            <img src="${book.Capa?.Data?.url || 'assets/modelo-geometrico-criativo-flyer-folheto.png'}" alt="${book.titulo}">
+                            <p>${book.titulo}</p>
+                        </div>
                     </a>
                 `;
                 bookList.appendChild(bookItem);
+            });
+
+            // Reconectar eventos de clique para abrir o modal de visualização
+            const bookLinks = document.querySelectorAll(".openBookModal");
+            bookLinks.forEach(link => {
+                link.addEventListener("click", (event) => {
+                    event.preventDefault(); // Evita recarregar a página
+
+                    console.log("Clicou em um livro!");
+
+                    // Capturar os dados do livro dos atributos `data-*`
+                    const title = link.getAttribute("data-title");
+                    const author = link.getAttribute("data-author");
+                    const description = link.getAttribute("data-description");
+                    const cover = link.getAttribute("data-cover");
+
+                    // Atualizar o modal com as informações do livro
+                    document.getElementById("modalBookCover").src = cover;
+                    document.getElementById("modalBookTitle").innerText = title;
+                    document.getElementById("modalBookAuthor").innerText = author;
+                    document.getElementById("modalBookDescription").innerText = description;
+
+                    // Exibir modal
+                    const viewBookModal = document.getElementById("viewBookModal");
+                    viewBookModal.showModal();
+                });
             });
         } catch (error) {
             console.error("Erro ao buscar livros:", error);
