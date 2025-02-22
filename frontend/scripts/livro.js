@@ -13,6 +13,19 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+    // Função para abrir o modal de visualização
+    function openBookModal(title, author, description, cover) {
+        // Atualizar o modal com as informações do livro
+        document.getElementById("modalBookCover").src = cover;
+        document.getElementById("modalBookTitle").innerText = title;
+        document.getElementById("modalBookAuthor").innerText = author;
+        document.getElementById("modalBookDescription").innerText = description;
+
+        // Exibir modal
+        viewBookModal.showModal();
+    }
+
+    // Adicionar eventos de clique aos links dos livros
     bookLinks.forEach(link => {
         link.addEventListener("click", (event) => {
             event.preventDefault(); // Evita recarregar a página
@@ -25,15 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const description = link.getAttribute("data-description");
             const cover = link.getAttribute("data-cover");
 
-            // Atualizar o modal com as informações do livro
-            document.getElementById("modalBookCover").src = cover;
-            document.getElementById("modalBookTitle").innerText = title;
-            document.getElementById("modalBookAuthor").innerText = author;
-            document.getElementById("modalBookDescription").innerText = description;
-
-            // Exibir modal
-            viewBookModal.showModal();
-            viewBookModal.style.visibility = "visible";
+            // Abrir o modal de visualização
+            openBookModal(title, author, description, cover);
         });
     });
 
@@ -41,15 +47,13 @@ document.addEventListener("DOMContentLoaded", () => {
     closeBookModalBtn.addEventListener("click", () => {
         console.log("Fechando modal do livro...");
         viewBookModal.close();
-        viewBookModal.style.visibility = "hidden";
     });
 
     // Fechar modal ao clicar fora dele
     viewBookModal.addEventListener("click", (event) => {
         if (event.target === viewBookModal) {
+            console.log("Clicou fora do modal. Fechando...");
             viewBookModal.close();
-            viewBookModal.style.visibility = "hidden";
         }
     });
 });
-
