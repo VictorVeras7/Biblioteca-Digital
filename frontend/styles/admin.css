@@ -542,7 +542,65 @@ dialog[open] {
     color: var(--warning-color);
 }
 
+/*modal de confirmar delete de livro*/
+#confirmDeleteModal {
+    width: 300px;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    background: var(--background-light);
+    text-align: center;
+}
 
+#confirmDeleteModal::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
 
+.modal-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+#confirmDeleteButton {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#confirmDeleteButton:hover {
+    background: #ff1a1a;
+}
+
+#cancelDeleteButton {
+    background: var(--background-dark);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#cancelDeleteButton:hover {
+    background: var(--accent-color);
+}
+
+.delete-book-button {
+    width: 40px;
+    background: transparent;
+    color: var(--background-dark);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.delete-book-button:hover {
+    color: #ff1a1a;
+}
 
 
