@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Função para abrir o modal de confirmação
     function openDeleteModal(livroId) {
         livroIdToDelete = livroId;
-        confirmDeleteModal.showModal();
+        confirmDeleteModal.showModal(); // Abre o modal imediatamente
     }
 
     // Função para fechar o modal de confirmação
@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (response.ok) {
                     alert("Livro excluído com sucesso!");
                     closeDeleteModal();
-                    fetchBooks();
+                    fetchBooks(); // Atualiza a lista de livros
                 } else {
                     console.error("Erro ao excluir livro:", response.statusText);
                     alert("Erro ao excluir o livro.");

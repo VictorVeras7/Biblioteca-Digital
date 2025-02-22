@@ -544,14 +544,18 @@ dialog[open] {
 
 /*modal de confirmar delete de livro*/
 #confirmDeleteModal {
-    width: 300px;
+    width: 250px;
+    height: 150px;
     padding: 20px;
     border: none;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     background: var(--background-light);
     text-align: center;
+    position: fixed;
+    z-index: 1000;
 }
+
 
 #confirmDeleteModal::backdrop {
     background: rgba(0, 0, 0, 0.5);
@@ -560,7 +564,8 @@ dialog[open] {
 .modal-buttons {
     display: flex;
     justify-content: space-around;
-    margin-top: 20px;
+    margin-top: 7px;
+    gap: 20px;
 }
 
 #confirmDeleteButton {
@@ -568,7 +573,7 @@ dialog[open] {
     color: white;
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -581,7 +586,7 @@ dialog[open] {
     color: white;
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
