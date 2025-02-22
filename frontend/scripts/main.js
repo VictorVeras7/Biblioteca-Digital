@@ -71,11 +71,32 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    // Verifica se o usuário está logado
+    const jwt = localStorage.getItem('jwt');
+    const userRole = localStorage.getItem('userRole'); // Obtém a role do usuário
+
+    if (jwt && userRole === 'Admin') {
+        // Se o usuário for admin, mostra os botões
+        const buttons = document.querySelectorAll('.add-book');
+        buttons.forEach(button => {
+            button.style.display = 'inline-block'; // Mostra os botões
+        });
+    } else {
+        // Se o usuário não for admin, oculta os botões
+        const buttons = document.querySelectorAll('.add-book');
+        buttons.forEach(button => {
+            button.style.display = 'none'; // Oculta os botões
+        });
+    }
+});
+
 // Função para fazer logout
 function logout() {
     // Remove o token JWT e os dados do usuário do localStorage
     localStorage.removeItem('jwt');
     localStorage.removeItem('user');
+    localStorage.removeItem('userRole');
 
     // Redireciona o usuário para a página de login
     window.location.href = 'login.html';

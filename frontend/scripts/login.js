@@ -39,7 +39,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Salva o token JWT no localStorage
                 localStorage.setItem('jwt', resultado.jwt);
                 localStorage.setItem('user', JSON.stringify(resultado.user));
-
+                if (resultado.user && resultado.user.role) {
+                    localStorage.setItem('userRole', resultado.user.role.name); // Armazena o nome da role
+                } else {
+                    console.error('Role do usuário não encontrada no objeto:', resultado);
+                }
                 window.location.href = 'index.html';
             } else {
                 alert(`Erro: ${resultado.error.message}`);
