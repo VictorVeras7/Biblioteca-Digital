@@ -595,17 +595,17 @@ dialog[open] {
 }
 
 .delete-book-button {
-    width: 40px;
-    background: transparent;
-    color: var(--background-dark);
+    width: 80px;
+    background: rgb(204, 66, 66);
+    color: var(--text-light);
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 25px;
+    font-size: 15px;
 }
 
 .delete-book-button:hover {
-    color: #ff1a1a;
+    background-color: red;
 }
 
 
