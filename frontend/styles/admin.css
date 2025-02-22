@@ -413,7 +413,7 @@ dialog {
 /* Estilização do modal de visualização de livro */
 .view-book {
     width: 60%;
-    height: 55%;
+    height: 50%;
     margin-top: 30px;
     background: var(--background-light);
     border-radius: 8px;
@@ -426,7 +426,6 @@ dialog {
     transform: translate(-50%, -50%);
     display: block; 
     visibility: hidden; /* Evita que ele bloqueie a tela */
-    flex-direction: row;
     gap: 15px;
     overflow-y: auto;
 }
@@ -434,7 +433,7 @@ dialog {
 /* Mostrar o modal corretamente */
 dialog[open] {
     visibility: visible;
-}
+}   
 
 /* Ajuste para modal do elemento dialog */
 .view-book::backdrop {
@@ -444,9 +443,10 @@ dialog[open] {
 /* Layout da seção do livro dentro do modal */
 .book-section {
     display: flex;
+    text-align: start;
     flex-direction: row;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 /* Estilização do título e autor */
@@ -457,7 +457,7 @@ dialog[open] {
 }
 
 .autor {
-    font-size: 14px;
+    font-size: 15px;
     color: #666;
 }
 
@@ -469,20 +469,21 @@ dialog[open] {
 }
 
 /* Área de interações (favoritar, compartilhar, etc.) */
-.more {
+.more-modal {
     display: flex;
     gap: 15px;
     align-items: center;
+    flex-direction: column;
 }
 
-.more a {
+.more-modal a {
     font-size: 20px;
     color: #333;
     cursor: pointer;
     transition: color 0.2s;
 }
 
-.more a:hover {
+.more-modal a:hover {
     color: #8BA0FC;
 }
 
@@ -523,19 +524,21 @@ dialog[open] {
     color: white;
 }
 
-/* Botão de fechar o modal */
-#closeBookModal {
-    background: #ccc;
-    color: black;
-    padding: 8px 15px;
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
     border: none;
-    border-radius: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
     cursor: pointer;
-    margin-top: 10px;
+    transition: color 0.2s;
 }
 
-#closeBookModal:hover {
-    background: #999;
+.close-modal:hover {
+    color: var(--warning-color);
 }
 
 

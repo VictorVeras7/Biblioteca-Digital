@@ -95,6 +95,7 @@
 
 <!-- Modal para visualizar livro -->
 <dialog id="viewBookModal" class="view-book">
+    <button id="closeBookModal" class="close-modal">&times;</button>
     <article class="book-section">
         <img class="book-cover" id="modalBookCover" alt="Capa do Livro">
         <section>
@@ -102,7 +103,7 @@
                 <h2 id="modalBookTitle">Título do Livro</h2>
                 <span class="autor"><a href="#" id="modalBookAuthor">Autor</a></span>
             </div>
-            <div class="more">
+            <div class="more-modal">
                 <div class="star">
                     <a>
                         <i class="bi bi-star"></i>
@@ -112,9 +113,11 @@
                         <i class="bi bi-star"></i>
                     </a>
                 </div>
-                <a><i class="bi bi-heart"></i></a>
-                <a><i class="bi bi-journal-text"></i></a>
-                <a><i class="bi bi-share"></i></a>
+                <div class="actions">
+                    <a><i class="bi bi-heart"></i></a>
+                    <a><i class="bi bi-journal-text"></i></a>
+                    <a><i class="bi bi-share"></i></a>
+                </div>
             </div>
             <div class="previous">
                 <button type="button" class="alugar-button">ALUGAR</button>
@@ -122,8 +125,7 @@
             </div>
             <p id="modalBookDescription">Descrição do livro será carregada aqui...</p>
         </section>
-    </article>
-    <button id="closeBookModal">Fechar</button>
+    </article>  
 </dialog>
 
     <section class="section-books swiper">
