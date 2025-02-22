@@ -4,7 +4,11 @@
   "info": {
     "singularName": "livro",
     "pluralName": "livros",
+<<<<<<< HEAD
     "displayName": "Livros"
+=======
+    "displayName": "Livro"
+>>>>>>> b1ad7b5981d178d3f8560c8ce92b8b611afa72c7
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +19,7 @@
       "required": true,
       "unique": true
     },
+<<<<<<< HEAD
     "Autor": {
       "type": "string",
       "required": true
@@ -30,6 +35,22 @@
     "Capa": {
       "allowedTypes": [
         "images"
+=======
+    "descricao": {
+      "type": "text",
+      "required": true
+    },
+    "autor": {
+      "type": "string",
+      "required": true
+    },
+    "capa": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+>>>>>>> b1ad7b5981d178d3f8560c8ce92b8b611afa72c7
       ],
       "type": "media",
       "multiple": false
