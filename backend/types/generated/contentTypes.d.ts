@@ -372,7 +372,8 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiLivroLivro extends Struct.CollectionTypeSchema {
   collectionName: 'livros';
   info: {
-    displayName: 'Livros';
+    description: 'Tabela de livros';
+    displayName: 'Livro';
     pluralName: 'livros';
     singularName: 'livro';
   };

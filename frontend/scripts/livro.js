@@ -51,8 +51,5 @@ document.addEventListener("DOMContentLoaded", () => {
             viewBookModal.style.visibility = "hidden";
         }
     });
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> 814860e6fdf2cf976af82a5487f2b32ef345038c
+
