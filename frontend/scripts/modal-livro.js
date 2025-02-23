@@ -229,7 +229,12 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("click", (event) => {
         if (event.target.classList.contains("delete-book-button")) {
             event.preventDefault();
-            const livroId = event.target.getAttribute("data-id");
+            const livroId = event.target.closest(".delete-book-button").getAttribute("data-id");
+            if (livroId) {
+                openDeleteModal(livroId);
+            } else {
+                console.error("id não encontrado!")
+            } 
             openDeleteModal(livroId);
         }
     });
