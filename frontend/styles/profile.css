@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --primary-color: #EFF8FA;  /* Azul claríssimo */
+    --secondary-color: #8BE8FC;  /* Azul celeste */
+    --accent-color: #8BA0FC;  /* Azul arroxeado */
+    --highlight-color: #8BFCEC;  /* Verde água */
+    --warning-color: #8BFCC6;  /* Verde claro */
+    --soft-color: #8BC4FC;  /* Azul médio */
+
+    /* Cores complementares */
+    --text-dark: #1E1E1E; /* Preto suave para textos */
+    --text-light: #FFFFFF; /* Branco puro */
+    --background-light: #F0F9FF; /* Fundo claro */
+    --background-dark: #102A43; /* Azul escuro para contrastes */
+}
+
+
+.profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--background-light);
+    border-radius: 8px;
+    box-shadow: 0 2px 50px rgba(0, 0, 0, 0.1);
+}
+
+.h1-profile {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.user-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.user-info strong {
+    color: #555;
+}
+
+.h2-profile {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.capa-profile{
+    width: 70px;
+    height: 70px;
+}
+
+.book-list-profile {
+    list-style-type: none;
+}
+
+.books-ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-list-profile li {
+    width: 85%;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-left: 4px solid var(--background-dark);
+    border-radius: 4px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.book-profile {
+    display: flex;
+    align-items: center;
+}
+
+.book-list-profile li p {
+    padding-right: 30px;
+}
+
+.book-list-profile li:hover {
+    background-color: #e9ecef;
+}
+
+.delete-book-profile {
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: var(--background-dark);
+}
+
+.delete-book-profile:hover {
+    color: red;
+}
