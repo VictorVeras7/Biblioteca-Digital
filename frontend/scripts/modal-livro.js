@@ -118,9 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById("modalBookCover").src = "assets/modelo-geometrico-criativo-flyer-folheto.png"; // Imagem padrão
             }
 
-            // Exibir o modal de visualização
-            viewBookModal.showModal();
-
             // Fechar o modal de adição
             bookModal.close();
 
@@ -232,7 +229,12 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("click", (event) => {
         if (event.target.classList.contains("delete-book-button")) {
             event.preventDefault();
-            const livroId = event.target.getAttribute("data-id");
+            const livroId = event.target.closest(".delete-book-button").getAttribute("data-id");
+            if (livroId) {
+                openDeleteModal(livroId);
+            } else {
+                console.error("id não encontrado!")
+            } 
             openDeleteModal(livroId);
         }
     });
