@@ -34,6 +34,12 @@
       ],
       "type": "media",
       "multiple": false
+    },
+    "rents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::rent.rent",
+      "mappedBy": "livro"
     }
   }
 }

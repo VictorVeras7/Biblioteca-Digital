@@ -78,13 +78,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (jwt && userRole === 'Admin') {
         // Se o usuário for admin, mostra os botões
-        const buttons = document.querySelectorAll('.add-book');
+        const buttons = document.querySelectorAll('.add-book-button');
         buttons.forEach(button => {
             button.style.display = 'inline-block'; // Mostra os botões
         });
     } else {
         // Se o usuário não for admin, oculta os botões
-        const buttons = document.querySelectorAll('.add-book');
+        const buttons = document.querySelectorAll('.add-book-button');
         buttons.forEach(button => {
             button.style.display = 'none'; // Oculta os botões
         });

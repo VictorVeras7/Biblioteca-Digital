@@ -348,3 +348,37 @@ main {
     color: var(--background-dark);
 }
 
+.section-books .add-book-button, .add-book {
+    font-family: "Open Sans", serif;
+    width: 100px;
+    height: 35px;
+    padding: 5px 10px;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.add-book-button:hover, .add-book-button:hover {
+    background-color: var(--soft-color);
+}
+
+.section-books .add-book-button {
+    font-family: "Open Sans", serif;
+    width: 100px;
+    height: 35px;
+    padding: 5px 10px;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.add-book-button:hover {
+    background-color: var(--soft-color);
+    color: var(--background-dark);
+}

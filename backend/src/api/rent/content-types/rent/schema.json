@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rents",
+  "info": {
+    "singularName": "rent",
+    "pluralName": "rents",
+    "displayName": "Rent"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "livro": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::livro.livro",
+      "inversedBy": "rents"
+    },
+    "rented": {
+      "type": "date",
+      "required": true
+    },
+    "deadline": {
+      "type": "date",
+      "required": true
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "rents"
+    }
+  }
+}

@@ -39,8 +39,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Salva o token JWT no localStorage
                 localStorage.setItem('jwt', resultado.jwt);
                 localStorage.setItem('user', JSON.stringify(resultado.user));
-                if (resultado.user && resultado.user.role) {
-                    localStorage.setItem('userRole', resultado.user.role.name); // Armazena o nome da role
+
+                const respostaUser = await fetch(`http://127.0.0.1:1337/api/users/${resultado.user.id}?populate=role`, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${resultado.jwt}`, // Token JWT
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                const resultadoUser = await respostaUser.json();
+                console.log(resultadoUser);
+
+                if (respostaUser.ok && resultadoUser.role) {
+                    localStorage.setItem('userRole', resultadoUser.role.name); // Armazena o nome da role
+                    console.log('Role do usuário: ', resultadoUser.role.name);
                 } else {
                     console.error('Role do usuário não encontrada no objeto:', resultado);
                 }
