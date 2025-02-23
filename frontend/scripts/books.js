@@ -26,6 +26,71 @@ document.addEventListener("DOMContentLoaded", () => {
     closeBookModal.addEventListener("click", () => viewBookModal.close());
     cancelDeleteButton.addEventListener("click", () => confirmDeleteModal.close());
 
+    // Publicar livro
+    bookForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const submitButton = bookForm.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = "Enviando...";
+
+        const title = document.getElementById("bookTitle").value;
+        const author = document.getElementById("bookAuthor").value;
+        const genre = document.getElementById("bookGenre").value;
+        const description = document.getElementById("bookDescription").value;
+        const file = document.getElementById("bookCover").files[0];
+
+        // Primeiro, enviar a imagem (capa do livro)
+        let coverId = null;
+        if (file) {
+            const formData = new FormData();
+            formData.append("files", file);
+
+            try {
+                const uploadResponse = await fetch("http://localhost:1337/api/upload", {
+                    method: "POST",
+                    body: formData,
+                });
+
+                const uploadResult = await uploadResponse.json();
+                coverId = uploadResult[0].id; // ID da imagem enviada
+            } catch (error) {
+                console.error("Erro ao enviar a capa do livro:", error);
+                alert("Erro ao enviar a capa do livro.");
+                submitButton.disabled = false;
+                submitButton.textContent = "Adicionar";
+                return;
+            }
+        }
+
+        // Enviar os dados do livro (POST)
+        try {
+            const response = await fetch("http://localhost:1337/api/livros", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    data: {
+                        titulo: title,
+                        Autor: author, // Certifique-se de que o nome do campo está correto
+                        Genero: genre,
+                        Descricao: description,
+                        Capa: coverId, // Certifique-se de que o nome do campo está correto
+                    },
+                }),
+            });
+
+            const result = await response.json();
+            console.log("Livro Adicionado:", result);
+
+            alert("Livro adicionado com sucesso!");
+            location.reload();
+        } catch (error) {
+            console.log("Erro ao adicionar livro: ", error);
+        }
+    });
+
     async function fetchBooks() {
         try {
             const response = await fetch("http://localhost:1337/api/livros?populate=Capa");
