@@ -18,7 +18,7 @@ Ampliar o acesso à leitura e promover a educação na comunidade.
 
 ## :people_holding_hands: Papéis ou tipos de usuário da aplicação
 
-administrador, estudante, professor, usuário não logado.
+administrador, usuario comum, usuário não logado e bibliotecario.
 
 ## :triangular_flag_on_post:	 Principais funcionalidades da aplicação
 
@@ -26,7 +26,7 @@ administrador, estudante, professor, usuário não logado.
 
 ### **Funcionalidades Acessíveis a Todos os Usuários (Usuário Não Logado - Área Pública):**
 - **Página Inicial:**  
-  Exibe informações sobre a biblioteca digital, objetivo do sistema e destaques do acervo.  
+  Exibe informações sobre a biblioteca digital, anuncios de eventos e destaques do acervo.  
 
 - **Busca de Livros:**  
   Permite pesquisar livros por título, autor ou gênero.  
@@ -40,36 +40,37 @@ administrador, estudante, professor, usuário não logado.
 
 ### **Funcionalidades Restritas a Usuários Logados (Área Restrita):**
 
-#### **Funcionalidades Comuns a Todos os Usuários Logados (Estudante e Professor):**
+#### **Funcionalidades Comuns a Todos os Usuários Logados:**
 - **Logout:**  
   Botão para encerrar a sessão disponível na barra de navegação.  
 
 - **Visualização de Perfil:**  
-  Exibe as informações pessoais e o histórico de atividades do usuário.  
+  Exibe as informações pessoais e o histórico de atividades do usuário.
+
+- **Alugar livro:**  
+  Usuario pode alugar qualquer livro presente no acervo.
 
 #### **Funcionalidades por Papel de Usuário:**
 
-1. **Estudante:**  
+1. **Usuario Logado:**  
    - Visualizar detalhes dos livros disponíveis.  
    - Solicitar empréstimos de livros.  
-   - Acompanhar status de empréstimos ativos e histórico de devoluções.  
+   - Acompanhar empréstimos ativos e realizar devolução.  
 
-2. **Professor:**  
+2. **Biliotecario:**  
    - Visualizar detalhes dos livros disponíveis.  
    - Solicitar empréstimos de livros.  
-   - Reservar livros para uso em atividades acadêmicas.  
-   - Acompanhar status de empréstimos e reservas.  
+   - Remover livros do catálogo. 
 
 3. **Administrador:**  
    - Gerenciar o catálogo de livros (CRUD completo).  
-   - Gerenciar usuários do sistema (CRUD completo).  
-   - Atribuir papéis e permissões aos usuários.    
+   - Gerenciar usuários do sistema (CRUD completo).      
 
 ## :spiral_calendar: Entidades ou tabelas do sistema
 
    - Usuário.  
    - Livro.  
-   - Empréstimo.  
+   - Rent(aluguel de livros).  
 
 
 ----
@@ -83,11 +84,11 @@ administrador, estudante, professor, usuário não logado.
 
 **Frontend:**
 
-Lista as tecnologias, frameworks e bibliotecas utilizados.
+Html5, css3 e Javascript.
 
 **Backend:**
 
-Lista as tecnologias, frameworks e bibliotecas utilizados.
+Strapi.
 
 
 ## :shipit: Operações implementadas para cada entidade da aplicação
@@ -95,9 +96,9 @@ Lista as tecnologias, frameworks e bibliotecas utilizados.
 
 | Entidade| Criação | Leitura | Atualização | Remoção |
 | --- | --- | --- | --- | --- |
-| Entidade 1 | X |  X  |  | X |
-| Entidade 2 | X |    |  X | X |
-| Entidade 3 | X |    |  |  |
+| User | X |  X  | X | X |
+| Livros | X | X |  X | X |
+| Rent | X |    |  | X |
 
 > Lembre-se que é necessário implementar o CRUD de pelo menos duas entidades.
 
@@ -105,5 +106,5 @@ Lista as tecnologias, frameworks e bibliotecas utilizados.
 
 | Método HTTP | URL |
 | --- | --- |
-| GET | api/entidade1/|
-| POST | api/entidade2 |
+| GET | api/user/|
+| POST | api/livros |
