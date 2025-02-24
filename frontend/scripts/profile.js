@@ -79,7 +79,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 // Excluir aluguel
 async function deleteRent(rentId) {
-    const jwt = localStorage.getItem("jwt");
+    rentId = rentId-1;
+    let jwt = localStorage.getItem("jwt");
 
     if (!jwt) {
         alert("Você não está autenticado!");
