@@ -10,25 +10,36 @@ async function searchBooks(query) {
 
     try {
         // Faz a requisição à API do Strapi
-        const response = await fetch(`http://localhost:1337/api/livros?filters[$or][0][titulo][$contains]=${query}&filters[$or][1][autor][$contains]=${query}`);
-        const data = await response.json();
+        const response = await fetch(
+            `http://localhost:1337/api/livros?filters[$or][0][titulo][$contains]=${query}&filters[$or][1][Autor][$contains]=${query}&populate=Capa`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }
+        );
 
-        if (data.data.length === 0) {
+        const searchData = await response.json();
+        console.log(searchData)
+
+        if (searchData.data.length === 0) {
             searchResults.innerHTML = '<p>Nenhum livro encontrado.</p>';
             return;
-        }
+        } else {
+            // Exibe os resultados na barra lateral
+            searchData.data.forEach(livro => {
+                console.log(livro)
 
-        // Exibe os resultados na barra lateral
-        data.data.forEach(livro => {
-            const livroAttributes = livro.attributes;
-            const resultItem = document.createElement('div');
-            resultItem.className = 'book-item';
-            resultItem.innerHTML = `
-                <img src="${livroAttributes.capa}" alt="${livroAttributes.titulo}">
-                <p>${livroAttributes.titulo} - ${livroAttributes.autor}</p>
-            `;
-            searchResults.appendChild(resultItem);
-        });
+                const resultItem = document.createElement('div');
+                resultItem.className = 'book-item';
+                resultItem.innerHTML = `
+                    <img src="${livro.capa || 'assets/modelo-geometrico-criativo-flyer-folheto.png'}" alt="capa" width="50" height="50">
+                    <a onclick="openBookModal(${livro.titulo}, ${livro.Autor}, ${livro.Descricao}, ${livro.capa})">${livro.titulo} - ${livro.Autor}</a>
+                `;
+                searchResults.appendChild(resultItem);
+                
+            });
+        }
     } catch (error) {
         console.error('Erro ao buscar livros:', error);
         searchResults.innerHTML = '<p>Erro ao buscar livros. Tente novamente.</p>';
@@ -39,9 +50,12 @@ async function searchBooks(query) {
 function setupSearchInputListener() {
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {
-        searchInput.addEventListener('input', (event) => {
-            const query = event.target.value.trim();
-            searchBooks(query); // Realiza a busca no Strapi
+        // Busca ao pressionar Enter
+        searchInput.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                const query = event.target.value.trim();
+                searchBooks(query); // Realiza a busca no Strapi
+            }
         });
     }
 }
@@ -72,12 +86,12 @@ function toggleSearchSidebar() {
 }
 
 // Monitora mudanças no DOM para reatribuir eventos quando o header mudar
-const observer = new MutationObserver(() => {
-    attachSearchButtonListener();
-    setupSearchInputListener(); // Configura o listener do campo de busca
-});
+// const observer = new MutationObserver(() => {
+//     attachSearchButtonListener();
+//     setupSearchInputListener(); // Configura o listener do campo de busca
+// });
 
-observer.observe(document.body, { childList: true, subtree: true });
+// observer.observe(document.body, { childList: true, subtree: true });
 
 // Garante que os eventos sejam adicionados ao carregar a página
 document.addEventListener("DOMContentLoaded", () => {
