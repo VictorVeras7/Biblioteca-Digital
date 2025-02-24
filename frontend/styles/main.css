@@ -384,3 +384,34 @@ main {
 }
 
 /*estilo lista de livro na pesquisa*/
+.results-search {
+    background-color: transparent;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.results {
+    display: flex;
+    flex-direction: row;
+}
+
+.results:hover {
+    cursor: pointer;
+    background-color: #1a446b;
+    color: var(--text-light);
+    border-radius: 10px;
+}
+
+.results-search p {
+    font-size: 14px;
+}
+
+.results-search img {
+    display: flex;
+    margin-left: 5px;
+    width: 70px;
+    height: 70px;
+}
+

@@ -33,8 +33,10 @@ async function searchBooks(query) {
                 const resultItem = document.createElement('div');
                 resultItem.className = 'book-item';
                 resultItem.innerHTML = `
-                    <img src="${livro.capa || 'assets/modelo-geometrico-criativo-flyer-folheto.png'}" alt="capa" width="50" height="50">
-                    <a onclick="openBookModal(${livro.titulo}, ${livro.Autor}, ${livro.Descricao}, ${livro.capa})">${livro.titulo} - ${livro.Autor}</a>
+                    <div class="results">
+                        <img src="${livro.capa || 'assets/modelo-geometrico-criativo-flyer-folheto.png'}" alt="capa">
+                        <p>titulo: ${livro.titulo} <br>autor: ${livro.Autor}</p>
+                    </div>    
                 `;
                 searchResults.appendChild(resultItem);
                 
