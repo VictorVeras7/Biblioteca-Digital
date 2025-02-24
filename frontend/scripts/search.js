@@ -87,14 +87,6 @@ function toggleSearchSidebar() {
     }, 300); // Aguarda a animação antes de esconder
 }
 
-// Monitora mudanças no DOM para reatribuir eventos quando o header mudar
-// const observer = new MutationObserver(() => {
-//     attachSearchButtonListener();
-//     setupSearchInputListener(); // Configura o listener do campo de busca
-// });
-
-// observer.observe(document.body, { childList: true, subtree: true });
-
 // Garante que os eventos sejam adicionados ao carregar a página
 document.addEventListener("DOMContentLoaded", () => {
     attachSearchButtonListener();
