@@ -35,10 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
         <header>
             <div><img src="./assets/logo-biblioteca-digital.png" alt="logo-biblioteca-digital"></div>
             <nav>
-                <a href="#inicio"><i class="bi bi-house-door-fill"></i></a>
-                <a href="login.html">Identificar-se</a>
-                <a href="cadastro.html">Cadastrar-se</a>
-                <a href="#" id="search-button"><i class="bi bi-search"></i></a>
+                <a href="#inicio" title="Página inicial"><i class="bi bi-house-door-fill"></i></a>
+                <a href="login.html" title="Fazer login">Identificar-se</a>
+                <a href="cadastro.html" title="Fazer cadastro">Cadastrar-se</a>
+                <a href="#" id="search-button" title="Pesquisar livros"><i class="bi bi-search"></i></a>
             </nav>
         </header>
     `;
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <div><img src="./assets/logo-biblioteca-digital.png" alt="logo-biblioteca-digital"></div>
             <nav>
                 <a href="#inicio" title="Página inicial"><i class="bi bi-house-door-fill"></i></a>
-                <a href="#" title="Abrir perfil"><i class="bi bi-person-circle"></i></a>
+                <a href="profile.html" title="Abrir perfil" ><i class="bi bi-person-circle"></i></a>
                 <a href="#" title="Encerrar sessão"><button class="button-logout"><i class="bi bi-box-arrow-right"></i> Sair</button></a>
                 <a href="#" id="search-button" title="Pesquisar livros"><i class='bx bx-search-alt-2'></i></a>
             </nav>
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <nav>
                 <a href="users.html" title="Gerenciar usuários"><i class="bi bi-person-gear"></i></a>
                 <a href="#inicio" title="Pagina inicial"><i class="bi bi-house-door-fill"></i></a>
-                <a href="#" title="Abrir perfil"><i class="bi bi-person-circle"></i></a>
+                <a href="profile.html" title="Abrir perfil"><i class="bi bi-person-circle"></i></a>
                 <a href="#" title="Encerrar sessão"><button class="button-logout"><i class="bi bi-box-arrow-right"></i> Sair</button></a>
                 <a href="#" id="search-button" title="Pesquisar livros"><i class='bx bx-search-alt-2'></i></a>
             </nav>
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         headerContainer.innerHTML = headerNotLogged;
     }
-});
+})
 
 document.addEventListener('DOMContentLoaded', function () {
     // Verifica se o usuário está logado
@@ -116,6 +116,7 @@ function logout() {
     localStorage.removeItem('jwt');
     localStorage.removeItem('user');
     localStorage.removeItem('userRole');
+    localStorage.removeItem('userId');
 
     // Redireciona o usuário para a página de login
     window.location.href = 'login.html';
