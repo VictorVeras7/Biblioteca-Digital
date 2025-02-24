@@ -92,9 +92,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // Verifica se o usuário está logado
     const jwt = localStorage.getItem('jwt');
     const userRole = localStorage.getItem('userRole'); // Obtém a role do usuário
+    const usertype = localStorage.getItem('userType'); // Obtém a role do usuário
+    console.log("user role debug:", userRole);
 
-    if (jwt && userRole === 'Admin') {
-        // Se o usuário for admin, mostra os botões
+    if (jwt && (userRole === 'Admin' || userRole === 'Librarian')) {
+        // Se o usuário for admin ou librarian, mostra os botões
         const buttons = document.querySelectorAll('.add-book-button');
         buttons.forEach(button => {
             button.style.display = 'inline-block'; // Mostra os botões
