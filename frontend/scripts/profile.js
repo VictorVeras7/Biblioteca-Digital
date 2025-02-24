@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         <p>Título:<br>${book.titulo}</p>
                         <p>Autor:<br>${book.Autor}</p>
                     </div>
-                    <button class="delete-book-profile" onclick="deleteRent(${rent.id})">
+                    <button class="delete-book-profile" onclick="deleteRent('${rent.documentId}')">
                         <i class="bi bi-trash3"></i>
                     </button>
                 `;
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 // Excluir aluguel
 async function deleteRent(rentId) {
-    rentId = rentId-1;
+
     let jwt = localStorage.getItem("jwt");
 
     if (!jwt) {
