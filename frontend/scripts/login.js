@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Salva o token JWT no localStorage
                 localStorage.setItem('jwt', resultado.jwt);
                 localStorage.setItem('user', JSON.stringify(resultado.user));
+                localStorage.setItem('userId', resultado.user.id);
 
                 const respostaUser = await fetch(`http://127.0.0.1:1337/api/users/${resultado.user.id}?populate=role`, {
                     method: 'GET',
