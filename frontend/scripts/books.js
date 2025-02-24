@@ -168,6 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     confirmDeleteModal.close();
                     viewBookModal.close();
                     fetchBooks();
+                    location.reload();
                 } else {
                     console.error("Erro ao deletar livro:", await response.json());
                 }
