@@ -36,7 +36,7 @@ async function searchBooks(query) {
                     <div class="results">
                         <img src="${livro.capa || 'assets/modelo-geometrico-criativo-flyer-folheto.png'}" alt="capa">
                         <p>titulo: ${livro.titulo} <br>autor: ${livro.Autor}</p>
-                    </div>    
+                    </div>   
                 `;
                 searchResults.appendChild(resultItem);
                 
