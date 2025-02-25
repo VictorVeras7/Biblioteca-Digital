@@ -390,16 +390,21 @@ main {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    border-radius: 10px;
 }
 
 .results {
     display: flex;
     flex-direction: row;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .results:hover {
     cursor: pointer;
-    background-color: #1a446b;
+    background-color: #7b99bf;
     color: var(--text-light);
     border-radius: 10px;
 }
