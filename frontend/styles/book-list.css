@@ -14,3 +14,27 @@
     --background-light: #F0F9FF; /* Fundo claro */
     --background-dark: #102A43; /* Azul escuro para contrastes */
 }
+
+.acervo-list {
+    color: var(--background-dark);
+    margin-left: 33%;
+}
+
+.add-book-button-list {
+    font-family: "Open Sans", serif;
+    font-size: 20px;
+    width: 200px;
+    height: 50px;
+    padding: 5px 10px;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 280%;
+    margin-bottom: 40px;
+}
+
+.add-book-button-list:hover {
+    background-color: var(--soft-color);
+}
